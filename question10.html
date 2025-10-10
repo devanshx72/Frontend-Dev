@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dropdown Selection</title>
+	</head>
+	<body>
+		<h1>Choose Your Location & Favorite Place</h1>
+
+		<form>
+			<label for="country">Country:</label>
+			<select id="country" name="country">
+				<option value="india" selected>India</option>
+				<option value="france">France</option>
+				<option value="japan">Japan</option>
+			</select>
+			<br><br>
+
+			<label for="state">State:</label>
+			<select id="state" name="state">
+				<option value="uttar_pradesh">Uttar Pradesh</option>
+				<option value="maharashtra" selected>Maharashtra</option>
+				<option value="karnataka">Karnataka</option>
+			</select>
+			<br><br>
+
+			<label for="city">City:</label>
+			<select id="city" name="city">
+				<option value="mumbai" selected>Mumbai</option>
+				<option value="pune">Pune</option>
+				<option value="nagpur">Nagpur</option>
+			</select>
+			<br><br>
+
+			<label for="place">Favorite Tourist Place:</label>
+			<select id="place" name="place">
+				<option value="gateway" selected>Gateway of India</option>
+				<option value="marine_drive">Marine Drive</option>
+				<option value="elephanta">Elephanta Caves</option>
+			</select>
+		</form>
+
+		<p id="summary">You have selected: India, Maharashtra, Mumbai. Favorite place: Gateway of India.</p>
+
+		<footer>
+			<p>&copy; 2025 Selection Demo</p>
+		</footer>
+	</body>
+</html>
+
