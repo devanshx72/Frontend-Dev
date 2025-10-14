@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Form</title>
+</head>
+<body>
+  <h1>Payment</h1>
+  <form method="post" action="#">
+    <label>Cardholder Name:<br>
+      <input type="text" name="cardholder" required>
+    </label>
+    <br><br>
+    <label>Card Number:<br>
+      <input type="text" name="cardnumber" required>
+    </label>
+    <br><br>
+    <label>Expiry Date:<br>
+      <input type="month" name="expiry" required>
+    </label>
+    <br><br>
+    <label>CVV:<br>
+      <input type="password" name="cvv" maxlength="4" required>
+    </label>
+    <br><br>
+    <button type="submit">Pay Now</button>
+  </form>
+</body>
+</html>

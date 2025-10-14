@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Security Example</title>
+</head>
+<body>
+  <h1>Secure Form Example</h1>
+
+  <form method="post" action="#" autocomplete="off">
+    <label>Username:<br>
+      <input type="text" name="username" required>
+    </label>
+    <br><br>
+    <label>Password:<br>
+      <input type="password" name="password" required>
+    </label>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p>
+    Note: Turning off autocomplete can improve security on shared or public computers because
+    it prevents browsers from storing sensitive credentials that others might access.
+  </p>
+</body>
+</html>

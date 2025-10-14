@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form with CSRF Token</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <!-- The hidden csrf_token field is a dummy value; in real apps the server generates a secure token -->
+  <!-- CSRF token purpose: prevents cross-site request forgery by ensuring the form submission originates from the site -->
+  <form method="post" action="#">
+    <label>Username:<br>
+      <input type="text" name="username" required>
+    </label>
+    <br><br>
+    <label>Password:<br>
+      <input type="password" name="password" required>
+    </label>
+    <br><br>
+    <input type="hidden" name="csrf_token" value="dummy_csrf_token_12345">
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>
