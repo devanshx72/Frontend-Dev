@@ -1,0 +1,48 @@
+body {
+    font-family: Arial;
+    background: #fafafa;
+    margin: 0;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3em;
+    gap: 2em;
+}
+
+.plan {
+    background: white;
+    border: 1px solid #ddd;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1.5em;
+    transition: all .3s;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+    background-color: #f0f8ff;
+}
+
+.plan a {
+    display: inline-block;
+    margin-top: 1em;
+    background: #333;
+    color: white;
+    padding: .5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.popular {
+    border: 2px solid #007BFF;
+    background: #e7f1ff;
+}
+
+.price {
+    font-size: 1.5em;
+    color: #007BFF;
+}

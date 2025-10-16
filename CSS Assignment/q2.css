@@ -1,0 +1,44 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Verdana, sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+nav a {
+  color: #eee;
+  margin: 0 1em;
+  text-decoration: none;
+}
+
+section {
+  padding: 4em 10%;
+  text-align: center;
+}
+
+.intro {
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+}
+
+.heritage {
+  background: url("heritage.jpg") center/cover fixed;
+  color: white;
+}
+
+.culture {
+  background: radial-gradient(circle, #c2e9fb, #a1c4fd);
+}
+
+footer {
+  text-align: center;
+  background-color: #111;
+  color: white;
+  padding: 1em 0;
+}
