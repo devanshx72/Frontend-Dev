@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* Container to center the card */
+.card-container {
+  perspective: 1000px;
+}
+
+/* Card setup */
+.card {
+  width: 250px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+/* Flip on hover */
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Front and back faces */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Front side */
+.front {
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.front img {
+  width: 100%;
+  border-bottom: 2px solid #f39c12;
+}
+
+.front h2 {
+  padding: 10px;
+  color: #f39c12;
+}
+
+/* Back side */
+.back {
+  background: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
