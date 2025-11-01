@@ -1,0 +1,45 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+}
+
+header, footer {
+  background: #232946;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+main {
+  padding: 6rem 0 4rem 0;
+}
+
+.linear-gradient {
+  padding: 3rem 1rem;
+  background: linear-gradient(120deg, #007cf0, #00dfd8 80%);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.radial-gradient {
+  padding: 3rem 1rem;
+  background: radial-gradient(circle, #f7971e 20%, #ffd200 100%);
+  color: #232946;
+  text-align: center;
+  /* Parallax-like fixed background */
+  background-attachment: fixed;
+  min-height: 200px;
+}

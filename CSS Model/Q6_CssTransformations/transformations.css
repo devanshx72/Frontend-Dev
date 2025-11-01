@@ -1,0 +1,51 @@
+body {
+  background: #f3f6fb;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.transform-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.trans-box {
+  width: 70px;
+  height: 70px;
+  background: #4dd0e1;
+  border-radius: 12px;
+  transition: all 0.4s ease; /* Smooth transition for transformation */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.17);
+}
+
+.rotate:hover {
+  transform: rotate(25deg);
+}
+
+.scale:hover {
+  transform: scale(1.3);
+}
+
+.translate:hover {
+  transform: translateX(25px);
+}
+
+.skew:hover {
+  transform: skew(15deg, 8deg);
+}
+
+.labels {
+  display: flex;
+  justify-content: center;
+  gap: 4.6rem;
+  font-size: 1em;
+  color: #505357;
+  margin-bottom: 2rem;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem 0;
+}

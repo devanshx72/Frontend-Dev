@@ -1,0 +1,70 @@
+body {
+  font-family: sans-serif;
+  background: #f6f7fa;
+  margin: 0;
+}
+
+/* Layout row using Flexbox */
+.box-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.box {
+  width: 140px;
+  height: 90px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  /* Demonstrates default padding */
+  padding: 1rem;
+  transition: border-color 0.3s;
+  /* Shows readable contrast */
+  color: #111;
+}
+
+.solid {
+  border: 4px solid #1976d2;
+}
+
+.dashed {
+  border: 4px dashed #c62828;
+}
+
+.double {
+  border: 4px double #2e7d32;
+}
+
+.groove {
+  border: 5px groove #fbc02d;
+}
+
+.rounded {
+  border: 4px solid #8e24aa;
+  border-radius: 24px; /* Shows border-radius */
+}
+
+.padded {
+  border: 4px solid #0097a7;
+  /* Shows different padding */
+  padding: 2rem 1rem 0.5rem 3rem;
+}
+
+/* Hover effect: Demonstrates border color transition */
+.box:hover {
+  border-color: #ff9800;
+  transition: border-color 0.3s;
+}
+
+/* Clean typography, footer spacing */
+header, footer {
+  text-align: center;
+  padding: 1rem;
+}

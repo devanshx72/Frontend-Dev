@@ -1,0 +1,66 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fcfcfc;
+  margin: 0;
+}
+
+.demo-list {
+  margin: 2rem 0 2rem 2rem;
+}
+
+.demo-list li:nth-child(odd) {
+  background: #e2eafc; /* :nth-child() pseudo-class */
+}
+
+/* Attribute selector: [(type="text")] */
+input[type="text"] {
+  border: 2px solid #2196f3;
+  margin-top: 4px;
+  padding: 0.4em;
+}
+
+/* Attribute selector: [href^="https"] */
+a[href^="https"] {
+  color: #388e3c;
+  font-weight: bold;
+}
+
+/* :hover and :focus pseudo-classes */
+a:hover, input:focus {
+  background: #ffc107;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+/* ::before and ::after pseudo-elements */
+.demo-list li::before {
+  content: "* ";
+  color: #ff7043;
+}
+
+/* Combinators demo */
+/* Child combinator (>) */
+.combo-demo > .before {
+  color: #673ab7;
+  font-size: 1rem;
+}
+
+/* Adjacent sibling combinator (+) */
+.combo-demo span + span {
+  color: #1565c0;
+}
+
+/* General sibling combinator (~) */
+.combo-demo .before ~ span {
+  text-decoration: underline;
+}
+
+/* Descendant selector */
+.combo-demo div strong {
+  background: #dce775;
+}
+
+footer, header {
+  text-align: center;
+  padding: 1rem 0;
+}

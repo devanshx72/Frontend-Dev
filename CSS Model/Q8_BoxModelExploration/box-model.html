@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Exploration</title>
+  <link rel="stylesheet" href="box-model.css">
+</head>
+<body>
+  <header>
+    <h1>Box Model Exploration</h1>
+  </header>
+  <main>
+    <section class="flex-center">
+      <div class="box-default">
+        <div class="content">Content</div>
+      </div>
+      <div class="desc">
+        <p>Default <code>box-sizing</code> adds padding and border to the final width.</p>
+      </div>
+    </section>
+    <section class="flex-center">
+      <div class="box-border">
+        <div class="content">Content</div>
+      </div>
+      <div class="desc">
+        <p>Using <code>box-sizing: border-box;</code> includes padding and border within set width.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <small>CSS Box Model Demo</small>
+  </footer>
+</body>
+</html>

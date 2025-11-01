@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f8;
+  margin: 0;
+}
+
+/* Center demonstration with Flexbox */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.box-default, .box-border {
+  width: 160px;
+  background: #e0ecff;
+  border: 6px solid #0d47a1;
+  padding: 18px;
+  margin: 14px;
+  border-radius: 15px;
+  position: relative;
+  /* Visually represents layers using background and outlines */
+}
+
+
+.box-border {
+  box-sizing: border-box; /* Demonstrates box-sizing: border-box; */
+  background: #dcedc8;
+}
+
+.content {
+  background: #fff;
+  outline: 2px dashed #2196f3; /* Shows content area */
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.desc {
+  max-width: 200px;
+  font-size: 1em;
+  color: #27323a;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem 0;
+}

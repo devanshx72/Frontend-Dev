@@ -1,0 +1,57 @@
+body {
+  background: #f0f2f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 3em 0;
+}
+
+/* Depth effect using box-shadow */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2em 1.2em;
+  min-width: 190px;
+  text-align: center;
+  transition: box-shadow 0.4s;
+}
+
+.card-simple {
+  box-shadow: 0 1px 4px rgba(60,60,60,0.15);
+}
+
+.card-medium {
+  box-shadow: 0 5px 16px rgba(60,60,60,0.23);
+}
+
+.card-strong {
+  box-shadow: 0 8px 30px rgba(100, 60, 60, 0.26);
+}
+
+/* Text-shadow for headings */
+h2 {
+  text-shadow: 1px 2px 5px #c7c8cc;
+}
+
+/* Card lift on hover with transition */
+.card:hover {
+  box-shadow: 0 14px 32px rgba(100,81,38,0.27);
+  transform: translateY(-8px);
+}
+
+@media (max-width: 700px) {
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
