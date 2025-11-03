@@ -1,0 +1,140 @@
+/* ====== Global Styles ====== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e3f2fd, #f9f9f9);
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e9ecef;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+/* ====== UI Container ====== */
+.ui-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.ui-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ====== Search Section ====== */
+.search-section {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 0.6rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.search-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* ====== Buttons Section ====== */
+.buttons-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.primary {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.primary:hover {
+    background-color: #218838;
+}
+
+.secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.secondary:hover {
+    background-color: #5a6268;
+}
+
+.outline {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+.outline:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* ====== Dropdown Section ====== */
+.dropdown {
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 700px) {
+    .ui-container {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .ui-card {
+        width: 90%;
+    }
+}

@@ -1,0 +1,106 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e9ecef;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.example {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 260px;
+    text-align: center;
+}
+
+/* :hover Example */
+.hover-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.hover-link:hover {
+    color: #ff6600;
+}
+
+/* :focus Example */
+.focus-input {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.focus-input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* :active Example */
+.active-btn {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.active-btn:active {
+    background-color: #0056b3;
+}
+
+/* :nth-child Example */
+.nth-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nth-list li {
+    background-color: #f0f0f0;
+    margin: 4px 0;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.nth-list li:nth-child(even) {
+    background-color: #d6eaf8;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .examples {
+        flex-direction: column;
+        align-items: center;
+    }
+}

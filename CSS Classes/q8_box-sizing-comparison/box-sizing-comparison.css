@@ -1,0 +1,74 @@
+/* ====== Global Styles ====== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    text-align: center;
+    background-color: #e9ecef;
+    padding: 1rem;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+/* ====== Comparison Container ====== */
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ====== Box Styles ====== */
+.box {
+    width: 250px;
+    height: 150px;
+    background-color: #ffffff;
+    border: 4px solid #007bff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Default: content-box */
+.content-box {
+    box-sizing: content-box;
+    background-color: #d1ecf1;
+}
+
+/* border-box */
+.border-box {
+    box-sizing: border-box;
+    background-color: #d4edda;
+}
+
+/* ====== Text Styling ====== */
+.box h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.box p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 700px) {
+    .comparison-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 80%;
+    }
+}
