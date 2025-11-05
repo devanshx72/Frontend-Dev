@@ -1,0 +1,36 @@
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 32px;
+}
+
+.box {
+  background: #f2fbf8;
+  border-radius: 8px;
+  padding: 22px;
+  text-align: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+.box:hover {
+  background: linear-gradient(45deg, #bce9ff, #c2f7e9);
+  color: #444;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+code {
+  font-family: monospace;
+  color: #276ad1;
+}
+
+/* Below 600px: Single column */
+@media (max-width: 600px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

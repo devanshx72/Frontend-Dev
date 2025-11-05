@@ -1,0 +1,39 @@
+.cheat-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 32px;
+}
+
+.cheat-box {
+  background: #f7f9fa;
+  border-radius: 8px;
+  padding: 24px;
+  transition: background 0.3s;
+  box-shadow: 0 2px 9px rgba(0,0,0,0.04);
+}
+
+.cheat-box:hover {
+  background: #e0e7ef;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.11);
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+/* Below 700px: Stack, key-value style */
+@media (max-width: 700px) {
+  .cheat-sheet-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .cheat-box h2 {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .cheat-box p {
+    margin-bottom: 0;
+  }
+}

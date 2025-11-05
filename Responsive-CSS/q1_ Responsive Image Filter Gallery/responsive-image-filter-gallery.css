@@ -1,0 +1,48 @@
+/* Gallery Grid Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  background: #f8f8f8;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.4s ease;
+  border-radius: 8px;
+}
+
+/* Different Filters */
+.filter-blur { filter: blur(4px); }
+.filter-grayscale { filter: grayscale(100%); }
+.filter-sepia { filter: sepia(100%); }
+.filter-brightness { filter: brightness(1.5); }
+.filter-contrast { filter: contrast(200%); }
+.filter-huerotate { filter: hue-rotate(120deg); }
+
+/* Remove filter on Hover */
+img:hover {
+  filter: none;
+  transition: filter 0.5s;
+}
+
+figcaption {
+  margin-top: 12px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Responsive Stack for <600px */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

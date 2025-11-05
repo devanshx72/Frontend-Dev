@@ -1,0 +1,68 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 70px 1fr;
+  min-height: 100vh;
+  animation: fade-in 1.5s;
+}
+@keyframes fade-in {
+  from { opacity: 0;}
+  to   { opacity: 1;}
+}
+.dashboard-header {
+  grid-area: header;
+  background: #4067c2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.dashboard-sidebar {
+  grid-area: sidebar;
+  background: #e8f0fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.dashboard-main {
+  grid-area: main;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr 1fr;
+  padding: 24px;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* Below 750px: Sidebar to Top, Stack Content */
+@media (max-width: 750px) {
+  .dashboard-grid {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 60px 1fr;
+  }
+  .dashboard-main {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

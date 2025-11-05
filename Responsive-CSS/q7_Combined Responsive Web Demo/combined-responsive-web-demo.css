@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  animation: fade-in 1.3s;
+}
+@keyframes fade-in {
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+.header {
+  display: flex;
+  background: #212c42;
+  padding: 18px;
+  color: #fff;
+  justify-content: center;
+}
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 34px;
+}
+
+.gallery-section, .explanation-section, .cheat-sheet-preview {
+  background: #f4f8fb;
+  border-radius: 9px;
+  padding: 28px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.06);
+  transition: background 0.3s;
+}
+.gallery-section:hover,
+.explanation-section:hover,
+.cheat-sheet-preview:hover {
+  background: #e2eaf4;
+}
+footer {
+  background: #212c42;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Below 700px: Stack sections vertically */
+@media (max-width: 700px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
