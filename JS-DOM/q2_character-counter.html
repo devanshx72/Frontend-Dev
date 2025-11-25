@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2 - Character Counter</title>
+  <style>
+    body { font-family: Arial; padding: 30px; background: #f0f0f0; }
+    textarea { width: 100%; height: 150px; padding: 10px; font-size: 16px; }
+    .counter { font-size: 18px; margin: 10px 0; font-weight: bold; }
+    .warning { color: orange; }
+    .danger { color: red; }
+    button { padding: 10px 20px; background: #dc3545; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Live Character Counter (Max 100)</h2>
+  <textarea id="textarea" maxlength="100"></textarea>
+  <div class="counter" id="counter">100 characters remaining</div>
+  <button id="resetBtn">Reset</button>
+
+  <script>
+    const textarea = document.getElementById('textarea');
+    const counter = document.getElementById('counter');
+    const resetBtn = document.getElementById('resetBtn');
+    const maxLength = 100;
+
+    function updateCounter() {
+      const remaining = maxLength - textarea.value.length;
+      counter.textContent = `${remaining} characters remaining`;
+
+      if (remaining <= 20 && remaining > 0) {
+        counter.className = 'counter warning';
+      } else if (remaining === 0) {
+        counter.className = 'counter danger';
+      } else {
+        counter.className = 'counter';
+      }
+    }
+
+    textarea.addEventListener('input', updateCounter);
+    textarea.addEventListener('keydown', (e) => {
+      if (textarea.value.length >= maxLength && e.key !== 'Backspace' && e.key !== 'Delete') {
+        e.preventDefault();
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      textarea.value = '';
+      updateCounter();
+    });
+
+    updateCounter();
+  </script>
+</body>
+</html>

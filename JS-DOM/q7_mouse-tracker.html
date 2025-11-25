@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q7 - Mouse Tracker</title>
+  <style>
+    #box { width: 400px; height: 400px; background: #333; margin: 50px auto; position: relative; color: white; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+    .dot { width: 15px; height: 15px; background: red; border-radius: 50%; position: absolute; transform: translate(-50%, -50%); }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center">Double-click inside box to drop red dot</h2>
+  <div id="box">Move mouse here<br><span id="coords">clientX: 0, clientY: 0</span></div>
+
+  <script>
+    const box = document.getElementById('box');
+    const coords = document.getElementById('coords');
+
+    box.addEventListener('mousemove', (e) => {
+      coords.textContent = `clientX: ${e.clientX}, clientY: ${e.clientY}`;
+    });
+
+    box.addEventListener('dblclick', (e) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      document.body.appendChild(dot);
+    });
+  </script>
+</body>
+</html>

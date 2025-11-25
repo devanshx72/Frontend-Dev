@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q6 - Table Filter</title>
+  <style>
+    body { padding: 20px; font-family: Arial; background: #f9f9f9; }
+    input { width: 100%; padding: 12px; font-size: 18px; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; border: 1px solid #ccc; text-align: left; }
+    th { background: #007bff; color: white; }
+    tr:nth-child(even) { background: #f2f2f2; }
+    .no-results { text-align: center; padding: 20px; color: red; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <input type="text" id="search" placeholder="Search by name, branch or CGPA...">
+  
+  <table id="table">
+    <thead>
+      <tr><th>Name</th><th>Branch</th><th>CGPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Devansh Sharma</td><td>CSE</td><td>9.2</td></tr>
+      <tr><td>Priya Singh</td><td>IT</td><td>8.8</td></tr>
+      <tr><td>Rahul Kumar</td><td>ECE</td><td>7.9</td></tr>
+      <tr><td>Anjali Mehta</td><td>CSE</td><td>9.5</td></tr>
+      <tr><td>Vikram Patel</td><td>ME</td><td>8.1</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const search = document.getElementById('search');
+    const rows = document.querySelectorAll('#table tbody tr');
+
+    search.addEventListener('input', () => {
+      const term = search.value.toLowerCase();
+      let visible = 0;
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        if (text.includes(term)) {
+          row.style.display = '';
+          visible++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      let noResult = document.querySelector('.no-results');
+      if (!visible) {
+        if (!noResult) {
+          noResult = document.createElement('div');
+          noResult.className = 'no-results';
+          noResult.textContent = 'No results found';
+          document.body.appendChild(noResult);
+        }
+      } else if (noResult) {
+        noResult.remove();
+      }
+    });
+  </script>
+</body>
+</html>

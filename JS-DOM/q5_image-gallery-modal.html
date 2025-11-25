@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q5 - Image Gallery Modal</title>
+  <style>
+    body { margin: 0; background: #222; padding: 20px; font-family: Arial; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 900px; margin: auto; }
+    .gallery img { width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 10px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+    .modal img { max-width: 90%; max-height: 90%; border: 5px solid white; border-radius: 10px; }
+    .modal.active { display: flex; }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <img src="https://picsum.photos/300/200?random=1" alt="1">
+    <img src="https://picsum.photos/300/200?random=2" alt="2">
+    <img src="https://picsum.photos/300/200?random=3" alt="3">
+    <img src="https://picsum.photos/300/200?random=4" alt="4">
+    <img src="https://picsum.photos/300/200?random=5" alt="5">
+    <img src="https://picsum.photos/300/200?random=6" alt="6">
+  </div>
+
+  <div class="modal" id="modal">
+    <img id="modalImg" src="" alt="Preview">
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.onclick = () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+      };
+    });
+
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    };
+
+    modalImg.onclick = (e) => e.stopPropagation(); // Prevent closing when clicking image
+  </script>
+</body>
+</html>

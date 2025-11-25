@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q9 - Form Validation</title>
+  <style>
+    body { font-family: Arial; padding: 30px; background: #f4f4f4; }
+    form { max-width: 400px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+    input { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+    .error { color: red; font-size: 14px; margin-top: -8px; display: block; }
+    button { background: #28a745; color: white; padding: 12px; width: 100%; border: none; cursor: pointer; }
+    .success { color: green; font-size: 20px; text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <form id="form">
+    <h2>Register</h2>
+    <input type="text" id="name" placeholder="Name" required>
+    <span class="error" id="nameError"></span>
+
+    <input type="email" id="email" placeholder="Email" required>
+    <span class="error" id="emailError"></span>
+
+    <input type="password" id="password" placeholder="Password (min 6 chars)" required>
+    <span class="error" id="passError"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+  <div class="success" id="success" style="display:none;">Form Submitted Successfully!</div>
+
+  <script>
+    const form = document.getElementById('form');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+
+    function showError(input, msg) {
+      const error = document.getElementById(input.id + 'Error');
+      error.textContent = msg;
+    }
+
+    function clearError(input) {
+      document.getElementById(input.id + 'Error').textContent = '';
+    }
+
+    [name, email, password].forEach(input => {
+      input.addEventListener('input', () => clearError(input));
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      if (!name.value.trim()) {
+        showError(name, "Name is required");
+        valid = false;
+      }
+      if (!email.value.includes('@')) {
+        showError(email, "Valid email required");
+        valid = false;
+      }
+      if (password.value.length < 6) {
+        showError(password, "Password must be 6+ characters");
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById('success').style.display = 'block';
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q1 - Product List Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input[type="text"] { width: 70%; padding: 10px; font-size: 16px; }
+    button { padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
+    ul { list-style: none; padding: 0; margin-top: 20px; }
+    li { padding: 10px; background: #f9f9f9; margin: 5px 0; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
+    li.editing input { width: 60%; padding: 5px; }
+    .actions button { margin-left: 5px; padding: 5px 10px; font-size: 12px; }
+    .edit-btn { background: #28a745; }
+    .delete-btn { background: #dc3545; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Product List Manager</h2>
+    <input type="text" id="productInput" placeholder="Enter product name">
+    <button id="addBtn">Add Product</button>
+    <ul id="productList"></ul>
+  </div>
+
+  <script>
+    const productList = document.getElementById('productList');
+    const input = document.getElementById('productInput');
+    const addBtn = document.getElementById('addBtn');
+
+    // Add product
+    addBtn.addEventListener('click', () => {
+      const name = input.value.trim();
+      if (name) {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span class="product-name">${name}</span>
+          <div class="actions">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        `;
+        productList.appendChild(li);
+        input.value = '';
+      }
+    });
+
+    // Event Delegation on <ul>
+    productList.addEventListener('click', (e) => {
+      const target = e.target;
+      const li = target.closest('li');
+
+      if (target.classList.contains('delete-btn')) {
+        li.remove();
+      }
+
+      if (target.classList.contains('edit-btn')) {
+        const span = li.querySelector('.product-name');
+        const currentText = span.textContent;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = currentText;
+        input.classList.add('editing');
+        li.classList.add('editing');
+        span.replaceWith(input);
+        input.focus();
+
+        // Auto-save on blur or outside click
+        const saveEdit = () => {
+          const newSpan = document.createElement('span');
+          newSpan.className = 'product-name';
+          newSpan.textContent = input.value.trim() || currentText;
+          input.replaceWith(newSpan);
+          li.classList.remove('editing');
+        };
+
+        input.addEventListener('blur', saveEdit);
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') saveEdit();
+        });
+      }
+    });
+
+    // Allow adding with Enter key
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addBtn.click();
+    });
+  </script>
+</body>
+</html>

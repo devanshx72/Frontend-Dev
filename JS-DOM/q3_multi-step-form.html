@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q3 - Multi-Step Form</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .form-container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+    .step { display: none; }
+    .step.active { display: block; }
+    input { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+    button { padding: 10px 20px; margin: 5px; }
+    .summary { background: #d4edda; padding: 20px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Multi-Step Registration</h2>
+    <div id="step1" class="step active">
+      <h3>Step 1: Name</h3>
+      <input type="text" id="name" placeholder="Enter your name">
+      <button onclick="nextStep(1)">Next</button>
+    </div>
+    <div id="step2" class="step">
+      <h3>Step 2: Email</h3>
+      <input type="email" id="email" placeholder="Enter email">
+      <button onclick="prevStep(2)">Back</button>
+      <button onclick="nextStep(2)">Next</button>
+    </div>
+    <div id="step3" class="step">
+      <h3>Step 3: Password</h3>
+      <input type="password" id="password" placeholder="Min 6 characters">
+      <button onclick="prevStep(3)">Back</button>
+      <button onclick="submitForm()">Submit</button>
+    </div>
+    <div id="summary" class="summary" style="display:none;"></div>
+  </div>
+
+  <script>
+    function showStep(n) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById(`step${n}`).classList.add('active');
+    }
+
+    function nextStep(current) {
+      let valid = true;
+      if (current === 1) {
+        const name = document.getElementById('name').value.trim();
+        if (!name) valid = false;
+      } else if (current === 2) {
+        const email = document.getElementById('email').value;
+        if (!email.includes('@')) valid = false;
+      }
+      if (valid) showStep(current + 1);
+      else alert('Please fill correctly!');
+    }
+
+    function prevStep(current) {
+      showStep(current - 1);
+    }
+
+    function submitForm() {
+      const password = document.getElementById('password').value;
+      if (password.length < 6) {
+        alert('Password must be 6+ chars');
+        return;
+      }
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      document.getElementById('summary').innerHTML = `
+        <h3>Registration Complete!</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${'*'.repeat(password.length)}</p>
+      `;
+      document.getElementById('summary').style.display = 'block';
+      document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+    }
+  </script>
+</body>
+</html>
