@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multi API Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 250px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 8px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+
+        .skeleton {
+            width: 120px;
+            height: 20px;
+            background: #e0e0e0;
+            margin: 10px auto;
+            border-radius: 5px;
+            animation: loading 1s infinite alternate;
+        }
+
+        @keyframes loading {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        #warning {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Multi-API Dashboard</h2>
+
+    <div class="card">
+        <h3>Total Users</h3>
+        <div id="usersCount" class="skeleton"></div>
+    </div>
+
+    <div class="card">
+        <h3>Total Orders</h3>
+        <div id="ordersCount" class="skeleton"></div>
+    </div>
+
+    <div class="card">
+        <h3>Total Products</h3>
+        <div id="productsCount" class="skeleton"></div>
+    </div>
+
+    <div id="warning"></div>
+
+    <script src="q4_multi_api_dashboard.js"></script>
+</body>
+
+</html>

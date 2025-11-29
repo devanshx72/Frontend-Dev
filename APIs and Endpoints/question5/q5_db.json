@@ -1,0 +1,40 @@
+{
+  "timetable": [
+    {
+      "id": 1,
+      "day": "Monday",
+      "subject": "Mathematics",
+      "faculty": "Dr. Mehta",
+      "time": "10:00 AM - 11:00 AM"
+    },
+    {
+      "id": 2,
+      "day": "Monday",
+      "subject": "Physics",
+      "faculty": "Prof. Rao",
+      "time": "12:00 PM - 1:00 PM"
+    },
+
+    {
+      "id": 3,
+      "day": "Wednesday",
+      "subject": "Computer Science",
+      "faculty": "Mrs. Sharma",
+      "time": "9:00 AM - 10:00 AM"
+    },
+    {
+      "id": 4,
+      "day": "Friday",
+      "subject": "Chemistry",
+      "faculty": "Dr. Kapoor",
+      "time": "11:00 AM - 12:00 PM"
+    },
+    {
+      "id": 5,
+      "day": "Saturday",
+      "subject": "English",
+      "faculty": "Ms. Singh",
+      "time": "2:00 PM - 3:00 PM"
+    }
+  ]
+}

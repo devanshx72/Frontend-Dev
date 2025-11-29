@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Finish Assignment",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Buy Groceries",
+      "priority": "Low",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Prepare Presentation",
+      "priority": "Medium",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Clean Room",
+      "priority": "Low",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Reply to Emails",
+      "priority": "High",
+      "completed": true
+    }
+  ]
+}

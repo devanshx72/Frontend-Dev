@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>College Timetable Viewer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .class-box {
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        .no-class {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>College Timetable Viewer</h2>
+
+    <label>Select Day:</label>
+    <select id="daySelect">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+    </select>
+
+    <div id="timetableList"></div>
+
+    <script src="q5_timetable_viewer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Devansh Sharma",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Aarav Mehta",
+      "status": "inactive"
+    },
+    {
+      "id": 3,
+      "name": "Riya Verma",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "name": "Karan Patel",
+      "status": "inactive"
+    },
+    {
+      "id": 5,
+      "name": "Sanya Kapoor",
+      "status": "active"
+    }
+  ]
+}
